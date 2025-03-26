@@ -28,10 +28,28 @@ export class CarsService {
   }
 
   update(id: number, updateCarDto: UpdateCarDto) {
-    return `This action updates a #${id} car`;
+    const car = this.findOne(id);
+   
+   if (updateCarDto.brand !== undefined) {
+     car.brand = updateCarDto.brand;
+   }
+   if (updateCarDto.model !== undefined) {
+     car.model = updateCarDto.model;
+   }
+   if (updateCarDto.year !== undefined) {
+     car.year = updateCarDto.year;
+   }
+
+    return;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} car`;
+
+    const carIndex = this.cars.findIndex((car) => car.id === id);
+    if (carIndex === -1) {
+      throw new BadRequestException('Carro nao encontrado');
+    }
+    this.cars.splice(carIndex, 1);
+    return;
   }
 }
