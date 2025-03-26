@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateCarDto } from './dto/create-car.dto';
 import { UpdateCarDto } from './dto/update-car.dto';
 import { Car } from './entities/car.entity';
@@ -7,15 +7,24 @@ import { Car } from './entities/car.entity';
 export class CarsService {
   private readonly cars : Car[] =[]
   create(createCarDto: CreateCarDto) {
-    return 'This action adds a new car';
+    const newCar = {
+      id : Math.random() * 100 ,
+      brand: createCarDto.brand,
+      model : createCarDto.model,
+      year : createCarDto.year
+    };
+    this.cars.push(newCar);
+    return newCar;
   }
 
   findAll() {
-    return `This action returns all cars`;
+    return this.cars;
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} car`;
+    const car = this.cars.find((car) => car.id === id);
+    if(!car){throw new NotFoundException('Carro não encontrado');}
+    return car;
   }
 
   update(id: number, updateCarDto: UpdateCarDto) {
