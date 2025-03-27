@@ -18,6 +18,3 @@ O projeto implementa um CRUD (Create, Read, Update, Delete) para um modelo de **
 - 🔍 Buscar usuário por ID
 - ✏️ Atualizar usuário
 - 🗑️ Deletar usuário
-
-## 🏗 Estrutura do Projeto
-
