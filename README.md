@@ -1,20 +1,19 @@
-# CRUD Simples com NestJS e Objeto JavaScript
+# 🚗 CRUD de Carros com NestJS
 
-Este projeto é uma API CRUD desenvolvida com [NestJS](https://nestjs.com/), sem o uso de bancos de dados. Em vez disso, os dados são armazenados em um simples objeto JavaScript em memória.
+Este projeto é um **CRUD de carros** desenvolvido com [NestJS](https://nestjs.com/).  
+Ele não utiliza banco de dados, armazenando os dados apenas em um objeto JavaScript.  
 
-## 🛠 Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
-- **NestJS** - Framework Node.js para aplicações escaláveis.
-- **TypeScript** - Linguagem utilizada para maior segurança e organização do código.
-- **Class Validator** - Para validação dos dados recebidos.
-- **Insomnia/Postman** - Para testar as requisições HTTP.
+- **NestJS** - Framework para aplicações Node.js
+- **TypeScript** - Tipagem estática para maior segurança
+- **JavaScript** - Para manipulação dos objetos
+- **Postman / Insomnia** - Para testar as requisições HTTP
 
-## 🚀 Funcionalidades
+## 🔧 Funcionalidades
 
-O projeto implementa um CRUD (Create, Read, Update, Delete) para um modelo de **Usuário**.
-
-- ✅ Criar usuário
-- 📜 Listar usuários
-- 🔍 Buscar usuário por ID
-- ✏️ Atualizar usuário
-- 🗑️ Deletar usuário
+✅ Criar um carro  
+✅ Listar todos os carros  
+✅ Buscar um carro por ID  
+✅ Atualizar os dados de um carro  
+✅ Remover um carro  
